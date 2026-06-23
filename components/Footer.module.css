@@ -1,0 +1,264 @@
+.footer {
+  background: #0F0F0F;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 0;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center top,
+    rgba(212, 175, 55, 0.04) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.topBorder {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.5) 30%,
+    rgba(212, 175, 55, 0.8) 50%,
+    rgba(212, 175, 55, 0.5) 70%,
+    transparent 100%
+  );
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+  gap: 3rem;
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Brand Column */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoImg {
+  border-radius: 50%;
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  object-fit: cover;
+}
+
+.brandName {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #D4AF37;
+}
+
+.brandSub {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #6B6560;
+  text-transform: uppercase;
+}
+
+.brandDesc {
+  font-size: 0.875rem;
+  color: #6B6560;
+  line-height: 1.7;
+}
+
+.estBadge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Navigation Column */
+.navCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.colTitle {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #D4AF37;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navLink {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #6B6560;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #D4AF37;
+}
+
+/* Address Columns */
+.addressCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.contactIcon {
+  color: #D4AF37;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.contactText {
+  font-size: 0.82rem;
+  color: #6B6560;
+  line-height: 1.65;
+}
+
+.contactLink {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #A8A09A;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+}
+
+.contactLink:hover {
+  color: #D4AF37;
+}
+
+.contactMeta {
+  font-size: 0.72rem;
+  color: #6B6560;
+  margin-top: 0.2rem;
+}
+
+.capabilities {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.capTitle {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  margin-bottom: 0.5rem;
+}
+
+.capItem {
+  font-size: 0.8rem;
+  color: #6B6560;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: #4A4A4A;
+}
+
+.bottomRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.seoText {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.72rem;
+  color: #3A3A3A;
+}
+
+.scrollTopBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: transparent;
+  color: #D4AF37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.scrollTopBtn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #D4AF37;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,289 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #0D7377, transparent);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.headline {
+  color: #E8F5F5;
+}
+
+.tealDivider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #065F46, #14A085, #065F46);
+  border-radius: 2px;
+  margin: 1rem auto 1.5rem;
+}
+
+.headerSub {
+  max-width: 620px;
+  margin: 1rem auto 0;
+  color: #6B8E8F;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Intro Grid */
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.etpImageWrap {
+  position: relative;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(13, 115, 119, 0.4);
+}
+
+.etpImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 30, 32, 0.7) 0%,
+    rgba(5, 30, 32, 0.1) 70%,
+    transparent 100%
+  );
+}
+
+.etpImageLabel {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #14A085;
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.introPara {
+  color: #6B8E8F;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.certTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Process Title */
+.processTitle {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tealLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(13, 115, 119, 0.5), transparent);
+}
+
+/* Stage Grid */
+.stageGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.stageCard {
+  position: relative;
+  padding: 2rem 1.5rem;
+  background: rgba(7, 43, 46, 0.6);
+  border: 1px solid rgba(13, 115, 119, 0.25);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  transition: border-color 0.3s, background 0.3s;
+  margin: 4px;
+}
+
+.stageCard:hover {
+  background: rgba(13, 115, 119, 0.15);
+  border-color: rgba(20, 160, 133, 0.5);
+}
+
+.connector {
+  position: absolute;
+  right: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, #14A085, transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.stageNumber {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(20, 160, 133, 0.5);
+}
+
+.stageIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid rgba(20, 160, 133, 0.3);
+  background: rgba(13, 115, 119, 0.15);
+  color: #14A085;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.stageBadge {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #14A085;
+}
+
+.stageTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #E8F5F5;
+}
+
+.stageDesc {
+  font-size: 0.85rem;
+  color: #6B8E8F;
+  line-height: 1.65;
+}
+
+.stageMetrics {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.metricVal {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #14A085;
+}
+
+.metricLabel {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(107, 142, 143, 0.7);
+}
+
+/* Green Cards */
+.greenGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.greenCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(6, 95, 70, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.greenCard:hover {
+  background: rgba(6, 95, 70, 0.2);
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.greenIconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: #34D399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.greenLabel {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #E8F5F5;
+  margin-bottom: 0.25rem;
+}
+
+.greenDesc {
+  font-size: 0.82rem;
+  color: #6B8E8F;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .stageGrid { grid-template-columns: repeat(2, 1fr); }
+  .connector { display: none; }
+}
+
+@media (max-width: 768px) {
+  .introGrid { grid-template-columns: 1fr; }
+  .stageGrid { grid-template-columns: 1fr; }
+  .greenGrid { grid-template-columns: 1fr; }
+}

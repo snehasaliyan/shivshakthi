@@ -1,0 +1,167 @@
+.section {}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.headerSub {
+  max-width: 580px;
+  margin: 1rem auto 0;
+  color: #A8A09A;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.grid {
+  margin-bottom: 3rem;
+}
+
+.badgeCard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  border-top: 3px solid var(--badge-color, #D4AF37);
+}
+
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(212, 175, 55, 0.06);
+  color: var(--badge-color, #D4AF37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.highlightTag {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--badge-color, #D4AF37);
+}
+
+.badgeTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F5F0E8;
+}
+
+.badgeSubtitle {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #6B6560;
+  letter-spacing: 0.04em;
+}
+
+.badgeDesc {
+  font-size: 0.88rem;
+  color: #A8A09A;
+  line-height: 1.65;
+  margin-top: 0.25rem;
+}
+
+/* ISO Banner */
+.isoBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.06), rgba(212, 175, 55, 0.02));
+  animation: borderGlow 4s ease-in-out infinite;
+  flex-wrap: wrap;
+}
+
+.isoLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.isoIconWrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #D4AF37;
+  background: rgba(212, 175, 55, 0.08);
+  color: #D4AF37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: goldPulse 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.isoTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #F5F0E8;
+  margin-bottom: 0.5rem;
+}
+
+.isoSub {
+  font-size: 0.9rem;
+  color: #A8A09A;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.isoRight {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.isoStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 2rem;
+}
+
+.isoStatNum {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #D4AF37;
+}
+
+.isoStatLabel {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6B6560;
+  text-align: center;
+}
+
+.isoStatDiv {
+  width: 1px;
+  height: 40px;
+  background: rgba(212, 175, 55, 0.25);
+}
+
+@media (max-width: 768px) {
+  .isoBanner {
+    flex-direction: column;
+  }
+  .isoRight {
+    width: 100%;
+    justify-content: center;
+  }
+}

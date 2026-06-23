@@ -1,0 +1,267 @@
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0F0F0F;
+  color: #F5F0E8;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #1A1A1A;
+  border-right: 1px solid rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebarHeader h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #D4AF37;
+  margin: 0;
+}
+
+.sidebarSub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  color: #A8A09A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.sidebarNav {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: #A8A09A;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.navLink:hover {
+  background-color: rgba(212, 175, 55, 0.05);
+  color: #D4AF37;
+}
+
+.sidebarFooter {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #D4AF37;
+  color: #0F0F0F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: 'Outfit', sans-serif;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #F5F0E8;
+}
+
+.userRole {
+  font-size: 0.7rem;
+  color: #6B6560;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  color: #EF4444;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.logoutBtn:hover {
+  color: #F87171;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.pageTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #F5F0E8;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background-color: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.statTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  color: #A8A09A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #D4AF37;
+  font-weight: bold;
+}
+
+/* Table */
+.tableContainer {
+  background-color: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tableHeader h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #F5F0E8;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+}
+
+.table th {
+  color: #A8A09A;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(212, 175, 55, 0.02);
+}
+
+.badgeQuote, .badgeSample {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badgeQuote {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60A5FA;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badgeSample {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.statusSelect {
+  background-color: transparent;
+  color: #F5F0E8;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.statusSelect:focus {
+  border-color: #D4AF37;
+}
+
+.statusSelect option {
+  background-color: #1A1A1A;
+  color: #F5F0E8;
+}

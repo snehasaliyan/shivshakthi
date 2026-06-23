@@ -1,0 +1,206 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 20, 0.92) 0%,
+    rgba(20, 20, 20, 0.75) 50%,
+    rgba(20, 20, 20, 0.88) 100%
+  );
+}
+
+.overlayGold {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 70% 50%,
+    rgba(212, 175, 55, 0.08) 0%,
+    transparent 60%
+  );
+}
+
+/* Animated scan lines */
+.lines {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.15) 40%,
+    rgba(212, 175, 55, 0.3) 50%,
+    rgba(212, 175, 55, 0.15) 60%,
+    transparent 100%
+  );
+  animation: scanLine 8s linear infinite;
+  top: -5%;
+}
+
+.line:nth-child(1) { top: 10%; animation-duration: 12s; }
+.line:nth-child(2) { top: 25%; animation-duration: 9s; }
+.line:nth-child(3) { top: 45%; animation-duration: 14s; }
+.line:nth-child(4) { top: 62%; animation-duration: 10s; }
+.line:nth-child(5) { top: 78%; animation-duration: 11s; }
+.line:nth-child(6) { top: 90%; animation-duration: 13s; }
+
+@keyframes scanLine {
+  0% { transform: translateX(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: 10rem;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.eyebrowLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37);
+}
+
+.eyebrowLine:last-child {
+  background: linear-gradient(90deg, #D4AF37, transparent);
+}
+
+.headline {
+  color: #F5F0E8;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.subtext {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  color: #A8A09A;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  animation: fadeInUp 0.8s 0.35s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.statsBar {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.statsBar > div {
+  padding: 1.75rem 2.5rem;
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.statsBar > div:first-child {
+  border-left: none;
+}
+
+.statCard {
+  text-align: center;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  animation: fadeIn 1s 1.2s both;
+}
+
+.scrollText {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6B6560;
+}
+
+.scrollArrow {
+  width: 24px;
+  height: 24px;
+  border-right: 2px solid #D4AF37;
+  border-bottom: 2px solid #D4AF37;
+  transform: rotate(45deg);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(6px); }
+}
+
+@media (max-width: 768px) {
+  .statsBar > div {
+    padding: 1.25rem 1.5rem;
+    border-left: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    width: 50%;
+  }
+
+  .statsBar > div:nth-child(-n+2) {
+    border-top: none;
+  }
+
+  .content {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+  }
+}

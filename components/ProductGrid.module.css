@@ -1,0 +1,210 @@
+.section {}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.headerSub {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  color: #A8A09A;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.productCard {
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(37, 37, 37, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3px solid var(--product-color, #D4AF37);
+}
+
+.productCard:hover,
+.productCardOpen {
+  border-color: var(--product-color, #D4AF37);
+  background: rgba(37, 37, 37, 0.9);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3),
+              inset 0 0 0 1px rgba(212, 175, 55, 0.1);
+}
+
+.cardHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+  transition: background 0.2s;
+}
+
+.cardHeader:hover {
+  background: rgba(212, 175, 55, 0.03);
+}
+
+.cardHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.06);
+  color: var(--product-color, #D4AF37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.productCardOpen .iconWrap {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--product-color, #D4AF37);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.cardName {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #F5F0E8;
+  margin-bottom: 0.2rem;
+}
+
+.cardTagline {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: var(--product-color, #D4AF37);
+  letter-spacing: 0.05em;
+}
+
+.chevron {
+  color: #6B6560;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: var(--product-color, #D4AF37);
+}
+
+/* Accordion body */
+.cardBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardBodyOpen {
+  max-height: 600px;
+}
+
+.cardInner {
+  padding: 0 2rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2rem;
+}
+
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+}
+
+.description {
+  color: #A8A09A;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.appTitle {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--product-color, #D4AF37);
+  margin-bottom: 0.875rem;
+}
+
+.appList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.appItem {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.9rem;
+  color: #A8A09A;
+}
+
+.checkIcon {
+  color: var(--product-color, #D4AF37);
+  flex-shrink: 0;
+}
+
+.specsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.specLabel {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: #6B6560;
+  font-weight: 500;
+}
+
+.specValue {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--product-color, #D4AF37);
+}
+
+@media (max-width: 768px) {
+  .bodyGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .cardHeader {
+    padding: 1.25rem;
+  }
+  .cardInner {
+    padding: 1.25rem;
+  }
+}
