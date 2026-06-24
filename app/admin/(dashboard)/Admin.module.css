@@ -372,3 +372,232 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+/* --- TABLE TOOLS (Search & Export) --- */
+.tableTools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0,0,0,0.2);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8a8a9a;
+}
+
+.searchInput {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.filtersWrapper {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filterSelect {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  color: #d1d5db;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+}
+
+.exportBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.exportBtn:hover {
+  background: rgba(16, 185, 129, 0.2);
+}
+
+/* --- ACTION BUTTONS --- */
+.actionGroup {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.iconBtn {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: #a0a0b0;
+  border-radius: 6px;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.iconBtn:hover {
+  color: #fff;
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.iconBtnDelete:hover {
+  color: #fff;
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* --- MODAL --- */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  background: rgba(25, 25, 30, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: #D4AF37;
+  font-size: 1.5rem;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #8a8a9a;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.modalBody {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detailRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding-bottom: 1rem;
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detailLabel {
+  color: #8a8a9a;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailValue {
+  color: #F5F0E8;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.notesBox {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  color: #d1d5db;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
