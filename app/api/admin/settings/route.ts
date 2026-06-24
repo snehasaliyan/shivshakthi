@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
-    const { name, currentPassword, newPassword } = body;
+    const { name, email, currentPassword, newPassword } = body;
 
     const user = await prisma.user.findUnique({
       where: { email: session.user.email },
@@ -23,11 +23,24 @@ export async function POST(req: Request) {
     }
 
     const updateData: any = {};
+    let emailChanged = false;
 
-    if (name) {
-      updateData.name = name;
+    // Handle Name and Email updates
+    if (name || email) {
+      if (name) updateData.name = name;
+      
+      if (email && email !== user.email) {
+        // Check if new email is already taken by someone else
+        const existingUser = await prisma.user.findUnique({ where: { email } });
+        if (existingUser) {
+          return NextResponse.json({ success: false, error: 'Email address is already in use' }, { status: 400 });
+        }
+        updateData.email = email;
+        emailChanged = true;
+      }
     }
 
+    // Handle Password update
     if (currentPassword && newPassword) {
       const isPasswordValid = await bcrypt.compare(currentPassword, user.password);
       if (!isPasswordValid) {
@@ -36,12 +49,19 @@ export async function POST(req: Request) {
       updateData.password = await bcrypt.hash(newPassword, 10);
     }
 
-    await prisma.user.update({
-      where: { email: session.user.email },
-      data: updateData,
-    });
+    // Only update if there are changes
+    if (Object.keys(updateData).length > 0) {
+      await prisma.user.update({
+        where: { email: session.user.email },
+        data: updateData,
+      });
+    }
 
-    return NextResponse.json({ success: true, message: 'Settings updated successfully' }, { status: 200 });
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Settings updated successfully',
+      emailChanged 
+    }, { status: 200 });
   } catch (error) {
     console.error('Error updating settings:', error);
     return NextResponse.json({ success: false, error: 'Failed to update settings' }, { status: 500 });

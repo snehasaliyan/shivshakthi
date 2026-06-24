@@ -32,10 +32,10 @@ export default async function AdminLayout({ children }: { children: ReactNode })
         </nav>
         <div className={styles.sidebarFooter}>
           <div className={styles.userProfile}>
-            <div className={styles.avatar}>{session.user?.name?.charAt(0) || 'A'}</div>
+            <div className={styles.avatar}>{session.user?.name?.charAt(0) || session.user?.email?.charAt(0)?.toUpperCase() || 'A'}</div>
             <div className={styles.userInfo}>
-              <span className={styles.userName}>{session.user?.name}</span>
-              <span className={styles.userRole}>Administrator</span>
+              <span className={styles.userName}>{session.user?.name || "Administrator"}</span>
+              <span className={styles.userRole}>{session.user?.email}</span>
             </div>
           </div>
           <Link href="/api/auth/signout" className={styles.logoutBtn}>
